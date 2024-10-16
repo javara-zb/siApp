@@ -46,7 +46,7 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |
    |-- ************************************************************************
 ```
-
+# For icons, use https://fonts.google.com/icons
 
 ##Test in local during local development. Remove when migrate to cloud
 
