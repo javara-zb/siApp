@@ -29,31 +29,41 @@
                 <p class="pb-3">
                   Submit Contact information for immediate follow up for Southern Interests Consultation or Information
                 </p>
-                <form id="contact-form" method="post" autocomplete="off">
-                  <div class="card-body p-0 my-3">
+                <form id="contact-form" method="post" autocomplete="on">
+                  <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
-                        <div class="input-group input-group-static mb-4">
-                          <label>Full Name</label>
-                          <input type="email" class="form-control" placeholder="Full Name">
+                        <div class="input-group input-group-dynamic mb-4">
+                          <label class="form-label">First Name</label>
+                          <input type="text" class="form-control" placeholder="" aria-label="First Name..." >
                         </div>
                       </div>
-                      <div class="col-md-6 ps-md-2">
-                        <div class="input-group input-group-static mb-4">
-                          <label>Email</label>
-                          <input type="email" class="form-control" placeholder="email@customer.com">
+                      <div class="col-md-6 ps-2">
+                        <div class="input-group input-group-dynamic">
+                          <label class="form-label">Last Name</label>
+                          <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
                         </div>
                       </div>
                     </div>
-                    <div class="form-group mb-0 mt-md-0 mt-4">
-                      <div class="input-group input-group-static mb-4">
-                        <label>How can we help you?</label>
-                        <textarea name="message" class="form-control" id="message" rows="6" placeholder="Describe your problem in at least 250 characters"></textarea>
+                    <div class="mb-4">
+                      <div class="input-group input-group-dynamic">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control">
                       </div>
+                    </div>
+                    <div class="input-group mb-4 input-group-static">
+                      <label>Your message</label>
+                      <textarea name="message" class="form-control" id="message" rows="4"></textarea>
                     </div>
                     <div class="row">
-                      <div class="col-md-12 text-center">
-                        <button type="submit" class="btn bg-gradient-primary mt-3 mb-0">Send Message</button>
+                      <div class="col-md-12">
+                        <div class="form-check form-switch mb-4 d-flex align-items-center">
+                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked="">
+                          <label class="form-check-label ms-3 mb-0" for="flexSwitchCheckDefault">I agree to the <a href="javascript:;" class="text-dark"><u>Terms and Conditions</u></a>.</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="submit" class="btn bg-gradient-dark w-100">Send Message</button>
                       </div>
                     </div>
                   </div>
