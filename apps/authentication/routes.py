@@ -17,10 +17,11 @@ from apps.authentication.models import Users
 
 from apps.authentication.util import verify_pass
 
-
+#The home page/index is the only page you don't need to log-in to view
 @blueprint.route('/')
 def route_default():
-    return redirect(url_for('authentication_blueprint.login'))
+    return render_template('home/index.html', segment='index')
+
 
 
 # Login & Registration
