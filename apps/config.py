@@ -26,7 +26,7 @@ class Config(object):
     DB_PORT     = os.getenv('DB_PORT'     , None)
     DB_NAME     = os.getenv('DB_NAME'     , None)
 
-    USE_SQLITE  = True 
+    #USE_SQLITE  = True 
 
     # try to set up a Relational DBMS
     if DB_ENGINE and DB_NAME and DB_USERNAME:
@@ -44,7 +44,6 @@ class Config(object):
             ) 
 
             USE_SQLITE  = False
-            print(USE_SQLITE)
 
         except Exception as e:
 
