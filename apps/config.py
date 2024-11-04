@@ -44,6 +44,7 @@ class Config(object):
             ) 
 
             USE_SQLITE  = False
+            print(USE_SQLITE)
 
         except Exception as e:
 
