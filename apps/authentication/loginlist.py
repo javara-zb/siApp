@@ -1,11 +1,6 @@
-import psycopg2
+from flask import current_app
+from apps import db
 
-conn = psycopg2.connect(database="postgres",  
-                        user="southerninterests_webapp", 
-                        password="600Bonaventure!",  
-                        host="southern-interests-db.postgres.database.azure.com", port="5432") 
-
-c = conn.cursor()
-
-users = c.fetchall()
+# Use the SQLAlchemy session to query users
+users = db.session.execute("SELECT * FROM users").fetchall()
 print(users)
