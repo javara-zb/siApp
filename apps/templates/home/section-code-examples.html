@@ -1,0 +1,114 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Template Page {% endblock %} 
+
+{% block body_class %} index-page {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  {% include 'includes/navigation.html' %} 
+
+  <div class="page-header min-vh-80" style="background-image: url('/static/assets/img/code_image.jpg')">
+    <span class="mask bg-gradient-dark opacity-6"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="text-center">
+            <h1 class="text-white">Code Examples Across Languages</h1>
+            <h3 class="text-white">We endeavor to reduce amount of technical debt by using languages and technology that can be maintained</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-sm-5">
+    <div class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl" style="background-image: url('/static/assets/img/.jpg');" loading="lazy">
+      <span class="mask bg-gradient-dark"></span>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 ms-lg-5">
+            <h1 class="text-white">Custom Fit to Meet Your Goals</h1>
+            <p class="lead text-white opacity-8">We don't try to sell you new software or new tools; we use what you have to meet your goals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mt-lg-0 mt-4">
+        <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4 h-100">
+          <i class="material-icons text-gradient text-primary text-3xl">sort</i>
+          <div class="ps-0 ps-md-3 mt-3 mt-md-0">
+            <h5>Data Visualizations</h5>
+            <p>Many Data visualization layers have similar functionality. Here are some visualization layer examples using powerBi, DAX, and Fabric.</p>
+            <a href="" class="text-primary icon-move-right">
+              See Samples
+              <i class="fas fa-arrow-right text-sm ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 px-lg-1 mt-lg-0 mt-4">
+        <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4 h-100">
+          <i class="material-icons text-gradient text-primary text-3xl">terminal</i>
+          <div class="ps-0 ps-md-3 mt-3 mt-md-0">
+            <h5>Python is A Core Technology</h5>
+            <p>Python code examples can include pandas, flask, pySpark, requests, scikit, and many others oriented around data.</p>
+            <a href="" class="text-primary icon-move-right">
+              See Samples
+              <i class="fas fa-arrow-right text-sm ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-lg-0 mt-4">
+        <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4">
+          <i class="material-icons text-gradient text-primary text-3xl">join_left</i>
+          <div class="ps-0 ps-md-3 mt-3 mt-md-0">
+            <h5>SQL is the backbone of most data architecture</h5>
+            <p>Whether is SQLite, MySQL, MSSQL, or any of the 100's of other implementations of SQL we excel. Everyting from Query design to optimizaiton to maintenance and enhancment.</p>
+            <a href="" class="text-primary icon-move-right">
+              See Samples
+              <i class="fas fa-arrow-right text-sm ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div><br></div>
+    <div class="row">
+        <div class="col-lg-4 mt-lg-0 mt-4">
+          <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4 h-100">
+            <i class="material-icons text-gradient text-primary text-3xl">html</i>
+            <div class="ps-0 ps-md-3 mt-3 mt-md-0">
+              <h5>You're Looking at it!</h5>
+              <p>This web application is a flask application, with components from material-kit and showcases some simple functionality thrown together to describe practice in the data domain.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-lg-1 mt-lg-0 mt-4">
+          <div class="info-horizontal bg-gray-100 border-radius-xl d-block d-md-flex p-4 h-100">
+            <i class="material-icons text-gradient text-primary text-3xl">schema</i>
+            <div class="ps-0 ps-md-3 mt-3 mt-md-0">
+              <h5>Scala is Fast Becoming the "big data" language</h5>
+              <p>Since scala is becoming so highly utilized across customers we are fast becoming experts in how to build and maintain scala tooling.</p>
+              <a href="" class="text-primary icon-move-right">
+                See Samples
+                <i class="fas fa-arrow-right text-sm ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
