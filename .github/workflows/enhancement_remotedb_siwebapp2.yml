@@ -2,7 +2,11 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
+<<<<<<<< HEAD:.github/workflows/enhancement_remotedb_siwebapp2.yml
 name: Build and deploy Python app to Azure Web App - siwebapp2
+========
+name: Build and deploy Python app to Azure Web App - southerninterestswebapp
+>>>>>>>> origin/main:.github/workflows/main_southerninterestswebapp.yml
 
 on:
   push:
@@ -65,14 +69,24 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
+<<<<<<<< HEAD:.github/workflows/enhancement_remotedb_siwebapp2.yml
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1E183628CFB44407B5E32E144FF2F191 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C6123C669B154F88AE8D41AF01B60DCE }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4960211713C64AFEA1D1DD4B708C3706 }}
+========
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5EFB0E60BB82443F9A988964FE2D8A0B }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3C996CEAD6514236A8759751735FE393 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5995C281B89245B7818F4E1E25621BE3 }}
+>>>>>>>> origin/main:.github/workflows/main_southerninterestswebapp.yml
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
+<<<<<<<< HEAD:.github/workflows/enhancement_remotedb_siwebapp2.yml
           app-name: 'siwebapp2'
+========
+          app-name: 'southerninterestswebapp'
+>>>>>>>> origin/main:.github/workflows/main_southerninterestswebapp.yml
           slot-name: 'Production'
           

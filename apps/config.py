@@ -5,8 +5,26 @@ Copyright (c) 2019 - present AppSeed.us
 
 import os, random, string
 
-class Config(object):
+def get_database_uri():
+    # Check if we are in production (Azure) or development
+    is_production = os.getenv('FLASK_ENV', 'development') == 'production'
+    
+    if is_production:
+        # Production: Use Azure Postgres
+        DB_ENGINE = 'postgresql'
+        DB_USERNAME = os.getenv('DB_USERNAME', 'southerninterests_webapp')
+        DB_PASS = os.getenv('DB_PASS', '600Bonaventure!')
+        DB_HOST = os.getenv('DB_HOST', 'southern-interests-db.postgres.database.azure.com')
+        DB_PORT = os.getenv('DB_PORT', '5432')
+        DB_NAME = os.getenv('DB_NAME', 'postgres')
+        
+        return f'{DB_ENGINE}://{DB_USERNAME}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+    else:
+        # Development: Use SQLite
+        basedir = os.path.abspath(os.path.dirname(__file__))
+        return f'sqlite:///{os.path.join(basedir, "app.db")}'
 
+class Config(object):
     basedir = os.path.abspath(os.path.dirname(__file__))
 
     # Assets Management
@@ -15,7 +33,7 @@ class Config(object):
     # Set up the App SECRET_KEY
     SECRET_KEY  = os.getenv('SECRET_KEY', None)
     if not SECRET_KEY:
-        SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))     
+        SECRET_KEY = ''.join(random.choice(string.ascii_lowercase) for i in range(32))     
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -26,7 +44,7 @@ class Config(object):
     DB_PORT     = os.getenv('DB_PORT'     , None)
     DB_NAME     = os.getenv('DB_NAME'     , None)
 
-    USE_SQLITE  = False 
+    USE_SQLITE  = True 
 
     # try to set up a Relational DBMS
     if DB_ENGINE and DB_NAME and DB_USERNAME:
@@ -44,11 +62,17 @@ class Config(object):
             ) 
 
             USE_SQLITE  = False
+            print(USE_SQLITE)
 
         except Exception as e:
 
             print('> Error: DBMS Exception: ' + str(e) )
             print('> Fallback to SQLite ')    
+
+    if USE_SQLITE:
+
+        # This will create a file in <app> FOLDER
+        SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
     
 class ProductionConfig(Config):
     DEBUG = False
@@ -60,7 +84,6 @@ class ProductionConfig(Config):
 
 class DebugConfig(Config):
     DEBUG = True
-
 
 # Load all possible configurations
 config_dict = {
